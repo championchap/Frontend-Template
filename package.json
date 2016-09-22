@@ -2,7 +2,7 @@
   "name": "webpack-project",
   "version": "0.0.1",
   "description": "A sensible template for new JavaScript projects",
-  "main": "app.js",
+  "main": "./src/js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "node ./setup.js",
