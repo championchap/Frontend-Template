@@ -1,0 +1,22 @@
+{
+  "name": "webpack-project",
+  "version": "0.0.1",
+  "description": "A sensible template for new JavaScript projects",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/championchap/webpack-template.git"
+  },
+  "keywords": [
+    "template",
+    "javascript",
+    "webpack",
+    "sass"
+  ],
+  "author": "Erik Watson",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/championchap/webpack-template#readme"
+}
