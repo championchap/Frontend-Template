@@ -4,7 +4,10 @@
   "description": "A sensible template for new JavaScript projects",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "node ./setup.js",
+    "build": "node node_modules/webpack/bin/webpack.js",
+    "watch": "node node_modules/webpack/bin/webpack.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,9 @@
   ],
   "author": "Erik Watson",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/championchap/webpack-template#readme"
+  "homepage": "https://bitbucket.org/championchap/webpack-template#readme",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "webpack": "^1.13.2"
+  }
 }
