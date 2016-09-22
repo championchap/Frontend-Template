@@ -1,5 +1,5 @@
 class App {
-  construct() {
+  constructor() {
     console.log('This is my awesome new App!')
   }
 }
