@@ -6,7 +6,7 @@ const config = {
     './src/sass',
     './src/js',
     './bin/css',
-    './bin/js'  
+    './bin/js'
   ],
 
   files: [
@@ -14,33 +14,33 @@ const config = {
   ]
 }
 
-function setup(config) {
+function setup (config) {
   /* In here is where you call the tasks you want to do on setup */
 
   // Problem! We are going to be using lots of ASYNC tasks in here
   // we should probably build a task() that uses Promises
-  // so we can chain these taks, but maintain the ASYNC niceness 
-  
+  // so we can chain these taks, but maintain the ASYNC niceness
+
   config.directories.forEach((dir) => {
-    create_dir(dir) 
+    createDir(dir)
   })
 
   config.files.forEach((file) => {
-    create_file(file)
+    createFile(file)
   })
 }
 
-/* 
+/*
 
   Down here is where you define the actual tasks to perform
-  plus any related code - if this gets to be quite large, you 
-  will probably want to break it out into more files 
+  plus any related code - if this gets to be quite large, you
+  will probably want to break it out into more files
 
 */
 
-function create_dir(path) {
+function createDir (path) {
   mkdirp(path, (err) => {
-    if(err) { 
+    if (err) {
       console.log(`Error: ${err}`)
     } else {
       console.log(`Created directory: ${path}`)
@@ -48,7 +48,7 @@ function create_dir(path) {
   })
 }
 
-function create_file(file) {
+function createFile (file) {
   fs.open('<directory>', 'w+', (err, fd) => {
     console.log(err, fd)
   })
