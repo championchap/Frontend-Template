@@ -11,7 +11,8 @@ const config = {
 
   files: [
     './src/js/app.js',
-    './src/sass/style.scss',
+    './src/sass/imports.scss',
+    './src/sass/home.scss',
     './bin/js/app.js',
     './bin/css/style.css'
   ]
