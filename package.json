@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "node ./setup.js",
     "build": "node node_modules/webpack/bin/webpack.js",
-    "watch": "node node_modules/webpack/bin/webpack.js"
+    "watch": "node node_modules/webpack/bin/webpack.js",
+    "clean": "rm -rf ./bin && rm -rf ./src",
+    "cs": "npm run clean && npm run setup"
   },
   "repository": {
     "type": "git",
