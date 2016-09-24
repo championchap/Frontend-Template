@@ -1,7 +1,7 @@
 {
-  "name": "webpack-project",
+  "name": "frontend-template",
   "version": "0.0.1",
-  "description": "A sensible template for new JavaScript projects",
+  "description": "A sensible, basic template for new Frontend projects",
   "main": "./src/js/app.js",
   "scripts": {
     "setup": "node ./setup.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/championchap/webpack-template.git"
+    "url": "git+ssh://git@bitbucket.org:championchap/frontend-template.git"
   },
   "keywords": [
     "template",
@@ -24,7 +24,7 @@
   ],
   "author": "Erik Watson",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/championchap/webpack-template#readme",
+  "homepage": "https://bitbucket.org/championchap/frontend-template#readme",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",

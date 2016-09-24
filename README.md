@@ -1,6 +1,6 @@
-# Webpack Templates
+# Frontend Template
 
-A sensible template for new JavaScript projects.
+A sensible, basic template for new Frontend projects.
 
 
 ## Features
