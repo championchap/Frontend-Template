@@ -8,15 +8,13 @@ A sensible template for new JavaScript projects.
   + Webpack & Babel for JavaScript Transforms
   + Gulp for SASS Transforms
   + Live Reloading - Maybe? I haven't done this before.
+  + Moment.js - Nice Date/Time handling
   + Pre-configured npm scripts
-  	- npm run setup - creates a nice folder structure for us to use
+    - npm run setup - creates a nice folder structure for us to use
     - npm run build:js
     - npm run watch:js
     - npm run build:sass
     - npm run watch:sass
-
-  + Moment.js as a Date/Time lib - Questionable?
-  + DOES NOT include JQuery! Include it yourself, if you _really_ have to
 
 
 ## Instructions
