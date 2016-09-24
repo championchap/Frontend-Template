@@ -34,8 +34,10 @@ A sensible template for new JavaScript projects.
 
 ## Suggestions
 
-  + Write tasks in whatever tool you want, but call the tasks as NPM scripts! This way we don't have to hunt through multiple files to find them, or remember which tool does what.
+Things that are not enforced, but are recommended to do on your projects.
 
+  + Write tasks in whatever tool you want, but call the tasks as NPM scripts! This way we don't have to hunt through multiple files to find them, or remember which tool does what.
+  + Write JavaScript using [JavaScript Standard Style](http://standardjs.com)
 
 ## Authors
 
