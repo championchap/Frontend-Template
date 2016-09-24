@@ -7,7 +7,7 @@
     "setup": "node ./setup.js",
     "build:js": "node node_modules/webpack/bin/webpack.js",
     "build:sass": "node node_modules/gulp/bin/gulp.js",
-    "watch:js": "node node_modules/webpack/bin/webpack.js watch",
+    "watch:js": "node node_modules/webpack/bin/webpack.js --watch",
     "watch:sass": "node node_modules/gulp/bin/gulp.js watch",
     "clean": "rm -rf ./bin && rm -rf ./src",
     "cs": "npm run clean && npm run setup"
@@ -34,6 +34,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "mkdirp": "^0.5.1",
+    "moment": "^2.15.1",
     "webpack": "^1.13.2"
   }
 }
