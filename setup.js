@@ -1,5 +1,5 @@
-const mkdirp = require ('mkdirp')
-const fs = require ('fs')
+const mkdirp = require('mkdirp')
+const fs = require('fs')
 
 const config = {
   directories: [
@@ -22,7 +22,7 @@ function setup (config) {
     .then(createAllFiles)
     .then(deleteSetup)
     .then(() => { console.log('Done') })
-    .catch(err => console.log('Error: ' + err)) 
+    .catch(err => console.log('Error: ' + err))
 }
 
 /*
@@ -33,24 +33,24 @@ function setup (config) {
 
 */
 
-function createAllDirectories() {
-  let create_directories = config.directories.map (dir => { 
-    return createDir (dir) 
+function createAllDirectories () {
+  let createDirectories = config.directories.map(dir => {
+    return createDir(dir)
   })
 
-  return Promise.all (create_directories)
+  return Promise.all(createDirectories)
 }
 
-function createAllFiles() {
-  let create_files = config.files.map (file => {
-    return createFile (file)
+function createAllFiles () {
+  let createFiles = config.files.map(file => {
+    return createFile(file)
   })
 
-  return Promise.all (create_files)
+  return Promise.all(createFiles)
 }
 
 function createDir (path) {
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     mkdirp(path, (err) => {
       if (err) {
         reject(err)
@@ -63,9 +63,9 @@ function createDir (path) {
 }
 
 function createFile (file) {
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fs.writeFile(file, '', err => {
-      if(err) {
+      if (err) {
         reject(err)
       }
 
@@ -73,12 +73,11 @@ function createFile (file) {
       resolve(`Created: ${file}`)
     })
   })
-  
 }
 
-function deleteSetup() {
+function deleteSetup () {
   const path = './setup.js'
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fs.unlink(path, err => { return err })
     console.log(`Deleted: ${path}`)
   })
