@@ -12,6 +12,10 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('./style.css'))
-    .pipe(sourcemaps.write('./bin/css/maps'))
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./bin/css'))
+})
+
+gulp.task('watch', () => {
+  gulp.watch('./src/sass/**/*.scss', ['sass'])
 })
