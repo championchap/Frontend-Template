@@ -1,5 +1,5 @@
-const mkdirp = require('mkdirp')
-const fs = require('fs')
+const mkdirp = require ('mkdirp')
+const fs = require ('fs')
 
 const config = {
   directories: [
@@ -10,24 +10,19 @@ const config = {
   ],
 
   files: [
-    './src/app.js'
+    './src/js/app.js',
+    './src/sass/style.scss',
+    './bin/js/app.js',
+    './bin/css/style.css'
   ]
 }
 
 function setup (config) {
-  /* In here is where you call the tasks you want to do on setup */
-
-  // Problem! We are going to be using lots of ASYNC tasks in here
-  // we should probably build a task() that uses Promises
-  // so we can chain these taks, but maintain the ASYNC niceness
-
-  config.directories.forEach((dir) => {
-    createDir(dir)
-  })
-
-  config.files.forEach((file) => {
-    createFile(file)
-  })
+  createAllDirectories()
+    .then(createAllFiles)
+    .then(deleteSetup)
+    .then(() => { console.log('Done') })
+    .catch(err => console.log('Error: ' + err)) 
 }
 
 /*
@@ -38,22 +33,55 @@ function setup (config) {
 
 */
 
+function createAllDirectories() {
+  let create_directories = config.directories.map (dir => { 
+    return createDir (dir) 
+  })
+
+  return Promise.all (create_directories)
+}
+
+function createAllFiles() {
+  let create_files = config.files.map (file => {
+    return createFile (file)
+  })
+
+  return Promise.all (create_files)
+}
+
 function createDir (path) {
-  mkdirp(path, (err) => {
-    if (err) {
-      console.log(`Error: ${err}`)
-    } else {
-      console.log(`Created directory: ${path}`)
-    }
+  return new Promise ((resolve, reject) => {
+    mkdirp(path, (err) => {
+      if (err) {
+        reject(err)
+      } else {
+        console.log(`Created: ${path}`)
+        resolve(`Success: Created directory at ${path}`)
+      }
+    })
   })
 }
 
 function createFile (file) {
-  fs.open('<directory>', 'w+', (err, fd) => {
-    console.log(err, fd)
-  })
+  return new Promise ((resolve, reject) => {
+    fs.writeFile(file, '', err => {
+      if(err) {
+        reject(err)
+      }
 
-  console.log(`Created file: ${file}`)
+      console.log(`Created: ${file}`)
+      resolve(`Created: ${file}`)
+    })
+  })
+  
+}
+
+function deleteSetup() {
+  const path = './setup.js'
+  return new Promise ((resolve, reject) => {
+    fs.unlink(path, err => { return err })
+    console.log(`Deleted: ${path}`)
+  })
 }
 
 setup(config)
