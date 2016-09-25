@@ -45,4 +45,4 @@ Things that are not enforced, but are recommended to do on your projects.
 
 ## Authors
 
-  + Erik Watson
+  + [Erik Watson](http://erikwatson.me)
