@@ -9,12 +9,15 @@ A sensible, basic template for new Frontend projects.
   + Gulp for SASS Transforms
   + Live Reloading - Maybe? I haven't done this before.
   + Moment.js - Nice Date/Time handling
-  + Pre-configured npm scripts
-    - npm run setup - creates a nice folder structure for us to use
-    - npm run build:js
-    - npm run watch:js
-    - npm run build:sass
-    - npm run watch:sass
+  + Pre-configured npm scripts. E.g. npm run watch:sass
+    - setup
+    - build
+    - build:js
+    - build:sass
+    - watch
+    - watch:js
+    - watch:sass
+    - clean
 
 
 ## Instructions
