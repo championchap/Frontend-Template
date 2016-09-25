@@ -17,13 +17,26 @@ const paths = {
   webpack_config: './webpack.config.js'
 }
 
-gulp.task('default', ['sass', 'js'], () => {
-
+gulp.task('default', () => {
+  console.log(JSON.stringify(
+    {
+      instructions: 'Run the following tasks by typing (e.g.) \'npm run watch:sass\' in the command line.',
+      npm_scripts: {
+        'build:sass': 'Builds SASS once.',
+        'build:js': 'Builds the JS once.',
+        'build': 'Runs build:sass and build:js together.',
+        'watch:sass': 'Runs build:sass whenever you change a SASS file.',
+        'watch:js': 'Runs build:js whenever you change a JS file.',
+        'watch': 'Runs watch:sass and watch:js together.',
+        'clean': 'Deletes the contents of the build directory.',
+        'setup': 'Runs the setup script, getting you ready to work'
+      }
+    }, null, 2
+  ))
 })
 
-gulp.task('watch', ['watch:sass', 'watch:js'], () => {
-
-})
+gulp.task('build', ['build:sass', 'build:js'])
+gulp.task('watch', ['watch:sass', 'watch:js'])
 
 gulp.task('watch:sass', () => {
   gulp.watch(paths.sass_all, ['sass'])
@@ -33,7 +46,7 @@ gulp.task('watch:js', () => {
   gulp.watch(paths.js_all, ['js'])
 })
 
-gulp.task('sass', () => {
+gulp.task('build:sass', () => {
   return gulp.src(paths.sass_entry)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -42,7 +55,7 @@ gulp.task('sass', () => {
     .pipe(gulp.dest(paths.css_dir))
 })
 
-gulp.task('js', () => {
+gulp.task('build:js', () => {
   return gulp.src('./src/js/app.js')
     .pipe(webpack(require(paths.webpack_config)))
     .pipe(gulp.dest(paths.js_dir))
