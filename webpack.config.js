@@ -2,7 +2,6 @@ module.exports = {
   entry: './src/js/app.js',
 
   output: {
-    path: './bin/js',
     filename: 'app.js'
   },
 
@@ -12,10 +11,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
       }
     ]
   }
