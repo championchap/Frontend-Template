@@ -18,7 +18,7 @@ const config = {
   ]
 }
 
-function setup (config) {
+function setup () {
   createAllDirectories()
     .then(createAllFiles)
     .then(deleteSetup)
