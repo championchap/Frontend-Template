@@ -24,7 +24,7 @@
     "sass"
   ],
   "author": "Erik Watson",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/championchap/Frontend-Template",
   "devDependencies": {
     "babel-core": "^6.14.0",
