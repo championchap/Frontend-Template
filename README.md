@@ -8,6 +8,7 @@ A sensible, basic template for new Frontend projects.
   + Webpack & Babel for JavaScript Transforms
   + Gulp for SASS Transforms
   + CSS and JS Source Maps
+  + JS checked on comple to ensure it follows [JavaScript Standard Style](http://standardjs.com)
   + Moment.js - Nice Date/Time handling
   + Pre-configured npm scripts. E.g. npm run watch:sass
     - setup
@@ -52,7 +53,6 @@ A sensible, basic template for new Frontend projects.
 Things that are not enforced, but are recommended to do on your projects.
 
   + Write tasks in whatever tool you want, but call the tasks as NPM scripts! This way we don't have to hunt through multiple files to find them, or remember which tool does what.
-  + Write JavaScript using [JavaScript Standard Style](http://standardjs.com)
   + Don't just download pre-compiled libs off of the Internet and stick them in a Directory - Use a package manager! (NPM preferred)
 
 

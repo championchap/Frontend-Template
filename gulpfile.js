@@ -3,6 +3,7 @@ const sass = require('gulp-sass')
 const sourcemaps = require('gulp-sourcemaps')
 const concat = require('gulp-concat')
 const webpack = require('gulp-webpack')
+const standard = require('gulp-standard')
 
 const paths = {
   sass_entry: './src/sass/imports.scss',
@@ -29,6 +30,7 @@ gulp.task('default', () => {
         'watch:sass': 'Runs build:sass whenever you change a SASS file.',
         'watch:js': 'Runs build:js whenever you change a JS file.',
         'watch': 'Runs watch:sass and watch:js together.',
+        'checkLjs': 'Ensures we are coding to JavaScript Standard Style',
         'clean': 'Deletes the contents of the build directory.',
         'setup': 'Runs the setup script, getting you ready to work'
       }
@@ -36,7 +38,7 @@ gulp.task('default', () => {
   ))
 })
 
-gulp.task('build', ['build:sass', 'build:js'])
+gulp.task('build', ['build:sass', 'check:js', 'build:js'])
 gulp.task('watch', ['watch:sass', 'watch:js'])
 
 gulp.task('watch:sass', () => {
@@ -44,7 +46,7 @@ gulp.task('watch:sass', () => {
 })
 
 gulp.task('watch:js', () => {
-  gulp.watch(paths.js_all, ['build:js'])
+  gulp.watch(paths.js_all, ['check:js', 'build:js'])
 })
 
 gulp.task('build:sass', () => {
@@ -56,9 +58,18 @@ gulp.task('build:sass', () => {
     .pipe(gulp.dest(paths.css_dir))
 })
 
-gulp.task('build:js', () => {
+gulp.task('build:js', ['check:js'], () => {
   // NOTE: We do JS Source Mapping from WebPack - so we don't need to here
-  return gulp.src('./src/js/app.js')
+  return gulp.src(paths.js_entry)
     .pipe(webpack(require(paths.webpack_config)))
     .pipe(gulp.dest(paths.js_dir))
+})
+
+gulp.task('check:js', () => {
+  return gulp.src(paths.js_all)
+    .pipe(standard())
+    .pipe(standard.reporter('default', {
+      breakOnError: true,
+      quiet: true
+    }))
 })
