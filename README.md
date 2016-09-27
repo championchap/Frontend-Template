@@ -7,7 +7,7 @@ A sensible, basic template for new Frontend projects.
 
   + Webpack & Babel for JavaScript Transforms
   + Gulp for SASS Transforms
-  + Live Reloading - Maybe? I haven't done this before.
+  + CSS and JS Source Maps
   + Moment.js - Nice Date/Time handling
   + Pre-configured npm scripts. E.g. npm run watch:sass
     - setup
@@ -18,6 +18,17 @@ A sensible, basic template for new Frontend projects.
     - watch:js
     - watch:sass
     - clean
+
+
+## TODO / Planning
+
+  + Live Reloading - Compile and reload the browser on save
+  + Have some common frameworks automatically configured by setup.js
+    - Bootstrap
+    - Foundation
+    - React + Flux
+    - JQuery
+    - Owl Carousel
 
 
 ## Instructions
@@ -42,6 +53,8 @@ Things that are not enforced, but are recommended to do on your projects.
 
   + Write tasks in whatever tool you want, but call the tasks as NPM scripts! This way we don't have to hunt through multiple files to find them, or remember which tool does what.
   + Write JavaScript using [JavaScript Standard Style](http://standardjs.com)
+  + Don't just download pre-compiled libs off of the Internet and stick them in a Directory - Use a package manager! (NPM preferred)
+
 
 ## Authors
 
