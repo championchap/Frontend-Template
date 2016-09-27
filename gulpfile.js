@@ -14,6 +14,7 @@ const paths = {
   js_all: './src/js/**/*.js',
   js_dir: './bin/js',
   js_file: './bin/js/app.js',
+  js_maps: './maps',
   webpack_config: './webpack.config.js'
 }
 
@@ -39,11 +40,11 @@ gulp.task('build', ['build:sass', 'build:js'])
 gulp.task('watch', ['watch:sass', 'watch:js'])
 
 gulp.task('watch:sass', () => {
-  gulp.watch(paths.sass_all, ['sass'])
+  gulp.watch(paths.sass_all, ['build:sass'])
 })
 
 gulp.task('watch:js', () => {
-  gulp.watch(paths.js_all, ['js'])
+  gulp.watch(paths.js_all, ['build:js'])
 })
 
 gulp.task('build:sass', () => {
@@ -56,6 +57,7 @@ gulp.task('build:sass', () => {
 })
 
 gulp.task('build:js', () => {
+  // NOTE: We do JS Source Mapping from WebPack - so we don't need to here
   return gulp.src('./src/js/app.js')
     .pipe(webpack(require(paths.webpack_config)))
     .pipe(gulp.dest(paths.js_dir))
