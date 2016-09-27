@@ -18,6 +18,7 @@ A sensible, basic template for new Frontend projects.
     - watch
     - watch:js
     - watch:sass
+    - check:js
     - clean
 
 
