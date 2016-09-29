@@ -1,11 +1,11 @@
 /* Put variables you want to use EVERYWHERE here */
 
-$primary: #232323;
-$secondary: #666666;
-
+$primary: #e3e3e3;
+$secondary: #663333;
 
 /* Styles that apply to ALL pages go here */
 
 body {
   background-color: $primary;
+  color: $secondary;
 }
