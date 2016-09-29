@@ -4,7 +4,6 @@
   "description": "A sensible, basic template for new Frontend projects",
   "main": "./src/js/app.js",
   "scripts": {
-    "setup": "node ./setup.js",
     "build": "node node_modules/gulp/bin/gulp.js build",
     "build:js": "node node_modules/gulp/bin/gulp.js build:js",
     "build:sass": "node node_modules/gulp/bin/gulp.js build:sass",

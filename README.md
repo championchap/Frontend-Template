@@ -37,7 +37,6 @@ A sensible, basic template for new Frontend projects.
 
   + Clone the Repo to a directory somewhere
   + npm install
-  + npm run setup
   + Edit the Package.json to suit the name, repo, etc of your own project
   + Edit the README.md to reflect the details of your own project
   + Delte the .git folder
