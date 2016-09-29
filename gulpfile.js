@@ -17,6 +17,7 @@ const paths = {
   js_dir: './bin/js',
   js_file: './bin/js/app.js',
   js_maps: './maps',
+  html_all: './bin/**/*.html',
   webpack_config: './webpack.config.js'
 }
 
@@ -56,9 +57,9 @@ gulp.task('build', ['build:sass', 'check:js', 'build:js'])
 
 gulp.task('watch', () => {
   startBrowserSync()
-  gulp.watch('src/sass/**/*.scss', ['build:sass'])
-  gulp.watch('src/js/**/*.js', ['check:js', 'build:js'])
-  gulp.watch('bin/*.html').on('change', browsersync.reload)
+  gulp.watch(paths.sass_all, ['build:sass'])
+  gulp.watch(paths.js_all, ['check:js', 'build:js'])
+  gulp.watch(paths.html_all).on('change', browsersync.reload)
 })
 
 gulp.task('watch:sass', () => {
