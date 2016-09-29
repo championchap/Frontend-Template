@@ -4,6 +4,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const concat = require('gulp-concat')
 const webpack = require('gulp-webpack')
 const standard = require('gulp-standard')
+const browsersync = require('browser-sync')
 
 const paths = {
   sass_entry: './src/sass/imports.scss',
@@ -18,6 +19,19 @@ const paths = {
   js_maps: './maps',
   webpack_config: './webpack.config.js'
 }
+
+let browsersyncStarted = false
+
+function startBrowserSync () {
+  if (browsersyncStarted === false) {
+    browsersyncStarted = true
+    browsersync.init({
+      server: './bin'
+    })
+  }
+}
+
+browsersync.create() // start browser-sync right away
 
 gulp.task('default', () => {
   console.log(JSON.stringify(
@@ -39,13 +53,21 @@ gulp.task('default', () => {
 })
 
 gulp.task('build', ['build:sass', 'check:js', 'build:js'])
-gulp.task('watch', ['watch:sass', 'watch:js'])
+
+gulp.task('watch', () => {
+  startBrowserSync()
+  gulp.watch('src/sass/**/*.scss', ['build:sass'])
+  gulp.watch('src/js/**/*.js', ['check:js', 'build:js'])
+  gulp.watch('bin/*.html').on('change', browsersync.reload)
+})
 
 gulp.task('watch:sass', () => {
+  startBrowserSync()
   gulp.watch(paths.sass_all, ['build:sass'])
 })
 
 gulp.task('watch:js', () => {
+  startBrowserSync()
   gulp.watch(paths.js_all, ['check:js', 'build:js'])
 })
 
@@ -56,6 +78,7 @@ gulp.task('build:sass', () => {
     .pipe(concat(paths.css_file))
     .pipe(sourcemaps.write(paths.css_maps))
     .pipe(gulp.dest(paths.css_dir))
+    .pipe(browsersync.stream())
 })
 
 gulp.task('build:js', ['check:js'], () => {
@@ -63,6 +86,7 @@ gulp.task('build:js', ['check:js'], () => {
   return gulp.src(paths.js_entry)
     .pipe(webpack(require(paths.webpack_config)))
     .pipe(gulp.dest(paths.js_dir))
+    .pipe(browsersync.stream())
 })
 
 gulp.task('check:js', () => {

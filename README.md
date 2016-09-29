@@ -9,6 +9,7 @@ A sensible, basic template for new Frontend projects.
   + Gulp for SASS Transforms
   + CSS and JS Source Maps
   + JS checked on comple to ensure it follows [JavaScript Standard Style](http://standardjs.com)
+  + Browser Sync for automatic page reloads
   + Moment.js - Nice Date/Time handling
   + Pre-configured npm scripts. E.g. npm run watch:sass
     - setup
@@ -24,7 +25,6 @@ A sensible, basic template for new Frontend projects.
 
 ## TODO / Planning
 
-  + Live Reloading - Compile and reload the browser on save
   + Have some common frameworks automatically configured by setup.js
     - Bootstrap
     - Foundation
