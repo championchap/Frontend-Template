@@ -25,12 +25,8 @@ A sensible, basic template for new Frontend projects.
 
 ## TODO / Planning
 
-  + Have some common frameworks automatically configured by setup.js
-    - Bootstrap
-    - Foundation
-    - React + Flux
-    - JQuery
-    - Owl Carousel
+  + Some kind of optional common framework integration.
+  + The task 'npm run watch' should build everything once, before watching.
 
 
 ## Instructions
