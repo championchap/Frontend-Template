@@ -41,9 +41,9 @@ gulp.task('default', () => {
   ))
 })
 
-gulp.task('build', ['build:sass', 'check:js', 'build:js'])
+gulp.task('build', ['build:sass', 'build:js'])
 
-gulp.task('watch', () => {
+gulp.task('watch', ['build:sass', 'build:js'], () => {
   startBrowserSync()
   gulp.watch(paths.sass_all, ['build:sass'])
   gulp.watch(paths.js_all, ['check:js', 'build:js'])
@@ -57,7 +57,7 @@ gulp.task('watch:sass', () => {
 
 gulp.task('watch:js', () => {
   startBrowserSync()
-  gulp.watch(paths.js_all, ['check:js', 'build:js'])
+  gulp.watch(paths.js_all, ['build:js'])
 })
 
 gulp.task('build:sass', () => {

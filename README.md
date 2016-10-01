@@ -26,7 +26,6 @@ A sensible, basic template for new Frontend projects.
 ## TODO / Planning
 
   + Some kind of optional common framework integration.
-  + The task 'npm run watch' should build everything once, before watching.
 
 
 ## Instructions
