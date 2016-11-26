@@ -25,7 +25,7 @@ browsersync.create() // start browser-sync right away
 gulp.task('default', () => {
   console.log(JSON.stringify(
     {
-      instructions: 'Run the following tasks by typing (e.g.) \'npm run watch:sass\' in the command line.',
+      instructions: 'Run the following tasks like so \'yarn run watch:sass\'.',
       npm_scripts: {
         'build:sass': 'Builds SASS once.',
         'build:js': 'Builds the JS once.',
@@ -33,9 +33,8 @@ gulp.task('default', () => {
         'watch:sass': 'Runs build:sass whenever you change a SASS file.',
         'watch:js': 'Runs build:js whenever you change a JS file.',
         'watch': 'Runs watch:sass and watch:js together.',
-        'checkLjs': 'Ensures we are coding to JavaScript Standard Style',
-        'clean': 'Deletes the contents of the build directory.',
-        'setup': 'Runs the setup script, getting you ready to work'
+        'check:js': 'Ensures we are coding to JavaScript Standard Style',
+        'clean': 'Deletes the contents of the build directory.'
       }
     }, null, 2
   ))
