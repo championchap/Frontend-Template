@@ -11,7 +11,7 @@ A sensible, basic template for new Frontend projects.
   + JS checked on comple to ensure it follows [JavaScript Standard Style](http://standardjs.com)
   + Browser Sync for automatic page reloads
   + Moment.js - Nice Date/Time handling
-  + Pre-configured npm scripts. E.g. npm run watch:sass
+  + Pre-configured npm scripts. E.g. yarn run watch:sass
     - setup
     - build
     - build:js
@@ -31,7 +31,7 @@ A sensible, basic template for new Frontend projects.
 ## Instructions
 
   + Clone the Repo to a directory somewhere
-  + npm install
+  + yarn install
   + Edit the Package.json to suit the name, repo, etc of your own project
   + Edit the README.md to reflect the details of your own project
   + Delte the .git folder
@@ -41,14 +41,15 @@ A sensible, basic template for new Frontend projects.
 ## Requirements
 
   + NodeJS & NPM
+  + Yarn Package Manager
 
 
 ## Suggestions
 
 Things that are not enforced, but are recommended to do on your projects.
 
-  + Write tasks in whatever tool you want, but call the tasks as NPM scripts! This way we don't have to hunt through multiple files to find them, or remember which tool does what.
-  + Don't just download pre-compiled libs off of the Internet and stick them in a Directory - Use a package manager! (NPM preferred)
+  + Write tasks in whatever tool you want, but call the tasks as Yarn scripts! This way we don't have to hunt through multiple files to find them, or remember which tool does what.
+  + Don't just download pre-compiled libs off of the Internet and stick them in a Directory - Use a Yarn!
 
 
 ## Authors
