@@ -3,8 +3,8 @@
 const Config = {
   // paths to commonly used files and directories
   paths: {
-    sass_entry: './src/sass/imports.scss',
-    sass_all: './src/sass/**/*.scss',
+    sass_entry: './src/sass/imports.sass',
+    sass_all: './src/sass/**/*.sass',
     css_dir: './bin/css',
     css_file: './style.css',
     css_maps: './maps',
