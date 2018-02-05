@@ -8,7 +8,7 @@ A sensible, basic template for new Frontend projects.
   + Webpack & Babel for JavaScript Transforms
   + Gulp for SASS Transforms
   + CSS and JS Source Maps
-  + JS checked on comple to ensure it follows [JavaScript Standard Style](http://standardjs.com)
+  + [JavaScript Standard Style](http://standardjs.com)
   + Browser Sync for automatic page reloads
   + Moment.js - Nice Date/Time handling
   + Pre-configured npm scripts. E.g. yarn run watch:sass
