@@ -11,6 +11,7 @@ A sensible, basic template for new Frontend projects.
   + [JavaScript Standard Style](http://standardjs.com)
   + Browser Sync for automatic page reloads
   + Moment.js - Nice Date/Time handling
+  + Axios - A good request module
   + Pre-configured npm scripts. E.g. yarn run watch:sass
     - setup
     - build
