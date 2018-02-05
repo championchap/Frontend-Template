@@ -35,16 +35,8 @@ A sensible, basic template for new Frontend projects.
 
 ## Requirements
 
-  + NodeJS & NPM
+  + NodeJS
   + Yarn Package Manager
-
-
-## Suggestions
-
-Things that are not enforced, but are recommended to do on your projects.
-
-  + Write tasks in whatever tool you want, but call the tasks as Yarn scripts! This way we don't have to hunt through multiple files to find them, or remember which tool does what.
-  + Don't just download pre-compiled libs off of the Internet and stick them in a Directory - Use a Yarn!
 
 
 ## Authors
