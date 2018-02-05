@@ -15,7 +15,7 @@ function startBrowserSync () {
   if (browsersyncStarted === false) {
     browsersyncStarted = true
     browsersync.init({
-      server: './bin'
+      server: './public'
     })
   }
 }

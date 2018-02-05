@@ -1,4 +1,4 @@
 node_modules/
-bin/js/
-bin/css/
+public/js/
+public/css/
 *.swp
