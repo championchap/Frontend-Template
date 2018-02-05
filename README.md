@@ -23,11 +23,6 @@ A sensible, basic template for new Frontend projects.
     - clean
 
 
-## TODO / Planning
-
-  + Some kind of optional common framework integration.
-
-
 ## Instructions
 
   + Clone the Repo to a directory somewhere
